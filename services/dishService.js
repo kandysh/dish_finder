@@ -15,9 +15,10 @@ export const searchDishes = async ({ minPrice, maxPrice, name }) => {
       r.city,
       m.dishname as dishName,
       m.dishprice as dishPrice,
-      m.ordercount as orderCount
+      COALESCE(COUNT(o.id), 0) as orderCount
     FROM menu m
     INNER JOIN restaurants r ON m.restaurant_id = r.id
+    LEFT JOIN orders o ON m.id = o.menu_id
     WHERE m.dishprice BETWEEN ? AND ?
   `;
 
@@ -29,7 +30,8 @@ export const searchDishes = async ({ minPrice, maxPrice, name }) => {
   }
 
   query += `
-    ORDER BY m.ordercount DESC
+    GROUP BY r.id, r.name, r.city, m.id, m.dishname, m.dishprice
+    ORDER BY orderCount DESC
     LIMIT 10
   `;
 

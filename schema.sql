@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS menu (
     id INT AUTO_INCREMENT PRIMARY KEY,
     dishname VARCHAR(255) NOT NULL,
     dishprice DECIMAL(10, 2) NOT NULL,
-    ordercount INT DEFAULT 0,
     restaurant_id INT NOT NULL,
     FOREIGN KEY (restaurant_id) REFERENCES restaurants(id) ON DELETE CASCADE
 );
@@ -28,6 +27,6 @@ CREATE INDEX idx_menu_restaurant_id ON menu(restaurant_id);
 CREATE INDEX idx_orders_menu_id ON orders(menu_id);
 CREATE INDEX idx_orders_restaurant_id ON orders(restaurant_id);
 
-CREATE INDEX idx_menu_price_ordercount ON menu(dishprice, ordercount DESC);
+CREATE INDEX idx_menu_price ON menu(dishprice);
 
 CREATE FULLTEXT INDEX idx_menu_dishname_fulltext ON menu(dishname);
