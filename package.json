@@ -1,0 +1,29 @@
+{
+  "name": "dish_finder",
+  "version": "1.0.0",
+  "description": "A RESTful API for searching dishes across restaurants with price filtering",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "mysql",
+    "restaurant",
+    "api",
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.24.0",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
+    "mysql2": "^3.15.3"
+  }
+}
