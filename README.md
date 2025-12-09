@@ -9,7 +9,7 @@ Simple REST API for searching dishes across restaurants.
 pnpm install
 
 # Create .env file
-echo "MYSQL_DATABASE=mysql://root:password@localhost:3306/dish_finder" > .env
+echo "MYSQL_URL=mysql://root:password@localhost:3306/dish_finder" > .env
 
 # Create database
 mysql -u root -p -e "CREATE DATABASE dish_finder"
