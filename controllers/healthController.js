@@ -3,7 +3,7 @@
  */
 
 import pool from "../config/database.js";
-import { asyncHandler } from "../middleware/errorHandler.js";
+import { asyncHandler } from "../middleware/handlers.js";
 
 /**
  * Health check endpoint

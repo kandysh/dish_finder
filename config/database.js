@@ -4,6 +4,9 @@
  */
 
 import mysql from "mysql2/promise";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const createPool = () => {
   const connectionString = process.env.DATABASE_URL;

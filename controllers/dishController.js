@@ -3,7 +3,7 @@
  */
 
 import * as dishService from "../services/dishService.js";
-import { asyncHandler } from "../middleware/errorHandler.js";
+import { asyncHandler } from "../middleware/handlers.js";
 
 const validateSearchParams = ({ minPrice, maxPrice }) => {
   if (!minPrice || !maxPrice) {

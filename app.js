@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
     version: "1.0.0",
     endpoints: {
       health: "/api/health",
-      search: "/search/dishes?minPrice=100&maxPrice=250&name=biryani",
+      search: "/api/search/dishes?minPrice=100&maxPrice=250&name=biryani",
     },
   });
 });
