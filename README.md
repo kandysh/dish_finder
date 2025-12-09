@@ -84,13 +84,13 @@ Returns top 10 dishes by order count.
 
 ```bash
 # Search all dishes in price range
-curl "http://localhost:3000/api/dishes?minPrice=100&maxPrice=250"
+curl "http://localhost:3000/api/search/dishes?minPrice=100&maxPrice=250"
 
 # Search for biryani
-curl "http://localhost:3000/api/dishes?minPrice=150&maxPrice=300&name=biryani"
+curl "http://localhost:3000/api/search/dishes?minPrice=150&maxPrice=300&name=biryani"
 
 # Search for paneer
-curl "http://localhost:3000/api/dishes?minPrice=50&maxPrice=200&name=paneer"
+curl "http://localhost:3000/api/search/dishes?minPrice=50&maxPrice=200&name=paneer"
 ```
 
 ## Tech Stack

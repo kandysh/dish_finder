@@ -9,7 +9,7 @@ export const notFoundHandler = (req, res) => {
     availableEndpoints: {
       root: "/",
       health: "/api/health",
-      dishes: "/api/dishes?minPrice=100&maxPrice=250&name=biryani",
+      dishes: "/api/search/dishes?minPrice=100&maxPrice=250&name=biryani",
     },
   });
 };
