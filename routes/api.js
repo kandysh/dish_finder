@@ -9,6 +9,6 @@ import * as dishController from "../controllers/dishController.js";
 const router = express.Router();
 
 router.get("/health", healthController.healthCheck);
-router.get("/dishes", dishController.searchDishes);
+router.get("/search/dishes", dishController.searchDishes);
 
 export default router;

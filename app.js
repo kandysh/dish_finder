@@ -1,7 +1,6 @@
 import express from "express";
 import apiRoutes from "./routes/api.js";
-import searchRoutes from "./routes/search.js";
-import { notFoundHandler, errorHandler } from "./middleware/errorHandler.js";
+import { notFoundHandler, errorHandler } from "./middleware/handlers.js";
 import { securityMiddleware } from "./middleware/security.js";
 
 const app = express();
@@ -24,7 +23,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", apiRoutes);
-app.use("/search", searchRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
@@ -41,7 +39,7 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log(`API Documentation: /`);
   console.log(`Health Check: /api/health`);
-  console.log(`Search: /search/dishes?minPrice=100&maxPrice=250`);
+  console.log(`Search: /api/search/dishes?minPrice=100&maxPrice=250`);
 });
 
 export default app;
