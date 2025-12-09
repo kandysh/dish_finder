@@ -9,7 +9,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const createPool = () => {
-  const connectionString = process.env.DATABASE_URL;
+  const connectionString = process.env.MYSQL_DATABASE;
 
   if (!connectionString) {
     console.error("DATABASE_URL environment variable is required");
